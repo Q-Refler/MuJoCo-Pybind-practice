@@ -1,0 +1,18 @@
+<mujoco>
+    <worldbody>
+        <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+        <geom type="plane" size="1 1 0.1" rgba="0.5 0.5 0.5 1"/>
+        <body name="target" mocap="true" pos="0 0 .1">
+            <geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.7" size="0.05 0.05 0.05" type="box"/>
+        </body>
+
+        <body pos="0 0 .1" name="ball">
+            <joint type='free'></joint>
+            <geom size=".1" pos="0 0 0"></geom>
+        </body>
+    </worldbody> 
+
+    <equality>
+        <weld body1="target" body2="ball" solimp="0.9 0.95 0.001" solref="0.02 1"></weld>
+    </equality>
+</mujoco>
